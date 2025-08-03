@@ -1,9 +1,17 @@
 services:
 
-  web:
+  web-app:
     build:
       context: ./services/web-app
     ports:
       - ${PORT_WEB_APP_HOST}:${PORT_WEB_APP_CONT}
     volumes:
       - ${VOL_WEB_APP}:/usr/local/apache2/htdocs/
+
+  dash-basic:
+    build:
+      context: ./services/dash-basic
+    ports:
+      - ${PORT_DASH_BASIC_HOST}:${PORT_DASH_BASIC_CONT}
+    volumes:
+      - ${VOL_DASH_BASIC}:/usr/local/apache2/htdocs/
